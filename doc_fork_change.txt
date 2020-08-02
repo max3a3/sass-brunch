@@ -1,0 +1,2 @@
+add fix for win32  
+https://github.com/max3a3/sass-brunch/commit/fb23d97c79e0a7b50146a3a004cb06c274e7bd39
