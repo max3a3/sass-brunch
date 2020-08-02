@@ -117,6 +117,9 @@ class SassCompiler {
       const data = `${result.css.toString()}\n\n`;
       const map = JSON.parse(result.map.toString());
 
+      if (process.platform==='win32') // simple cleanup for windows based
+        map.sources = map.sources.map(src => src.replace('file:///', ''))
+      else
       // Use relative paths to avoid leaking data.
       map.sources = map.sources.map(src => sysPath.relative(
         this.rootPath,
